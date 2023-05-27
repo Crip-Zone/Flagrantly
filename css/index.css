@@ -753,10 +753,12 @@ img.sort, .sort {
 .dropmenu > li {
 	display: inline-block;
 	margin: 0px;
-	 font-size: 0.7rem;
-	 line-height: 1.9em;
+	font-size: 0.7rem;
+	line-height: 1.9em;
 }
-
+.dropmenu li:first-child a {
+    border-radius: 5px 0px 5px 0px;
+}
 #top_info > li {
 	display: inline-block;
 	margin: 0 2px 0 2px;
@@ -861,6 +863,7 @@ a[class^="mobile_generic_menu_"] {
 	min-height: 26px;
 	line-height: 26px;
 	margin: 0 0.7em;
+	border-radius: 5px;
 }
 
 .main_menu_container {
