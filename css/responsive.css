@@ -877,16 +877,16 @@
 
 @media (max-width: 880px) {
 #top_info {
-  clear: both;
-  padding-bottom: 5px;
+  	clear: both;
+  	padding-bottom: 5px;
 	text-align: right;
 }
-	#top_info ol {
-		text-align: left;
+#top_info ol {
+	text-align: left;
 	}
 #header > #inner_wrap {
-  display: block;
-  padding: 0px 0px;
+  	display: block;
+  	padding: 0px 0px;
 }
 }
 

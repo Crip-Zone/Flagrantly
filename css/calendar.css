@@ -202,11 +202,7 @@ div.week_month_title a {
 td.week_post {
 	vertical-align: middle !important;
 }
-div.week_add_event {
-	/* text-align: center; */
-}
 div.week_add_event > a {
-	/* font-size: x-large; */
 	color: #999;
 }
 div.week_add_event > a:hover {

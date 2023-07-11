@@ -41,7 +41,7 @@ input, button, select, textarea {
 	font: 78%/130% "Verdana", "Arial", "Helvetica", sans-serif;
 	background: #fff;
 	outline: none;
-	border: none;
+	border: 1px solid #7f9db9;
 	vertical-align: middle;
 	border-radius: 3px;
 	padding: 0.3em 0.5em;
@@ -52,7 +52,6 @@ input:hover, textarea:hover, button:hover, select:hover {
 }
 input.top_search, textarea.top_search, input.top_search.button, select.top_search{
 	background: #383838;
-/*	box-shadow: -2px 1px 2px 2px inset rgb(46,46,46); */
 	border-radius: 13px;
 	padding: 4px 8px;
 	border: none;
@@ -67,18 +66,25 @@ input.top_search:focus, textarea.top_search:focus, input.top_search.button:focus
 	background: #484848;
 	outline: none;
 }
-input:hover.top_search, input:active.top_search, input:focus.top_search {
+input:active.top_search, input:focus.top_search, textarea:hover.top_search {
 	background: #484848;
-/*	box-shadow: -2px 1px 2px 2px inset rgb(46,46,46); */
 	border-radius: 13px;
 	padding: 4px 8px;
 	border: none;
+	color: #000;
+}
+input:hover.top_search, select:hover.top_search{
+	background: #bababa;
+	border-radius: 13px;
+	padding: 4px 8px;
+	border: none;
+	color: #000;
 }
 textarea:hover {
-	background: #484848;
+	background: #fff;
 }
 input:focus, textarea:focus, button:focus, select:focus {
-	background: #fefefe;
+	background: #fff;
 	outline: none;
 }
 input, button, select {
@@ -500,9 +506,6 @@ a img {
 	padding: 1px 1px 1px 0px;
 }
 
-.toggle_up:hover:before, .toggle_down:hover:before {
-}
-
 /* Generally, those [?] icons. This makes your cursor a help icon. */
 .help {
 	cursor: help;
@@ -527,7 +530,7 @@ a img {
 	clear: both;
 }
 .pagesection .pagelinks {
-	display: inline-block;
+	display: block;
 	float: left;
 }
 .pages::after, .jump_to::after, .code::after,
@@ -757,8 +760,19 @@ img.sort, .sort {
 	line-height: 1.9em;
 }
 .dropmenu li:first-child a {
-    border-radius: 5px 0px 5px 0px;
+	border-radius: 5px 0px 5px 0px;
 }
+.dropmenu, #top_info {
+	position: relative;
+}
+/* Level 1 button background. */
+.dropmenu > li {
+	display: inline-block;
+	margin: 0px;
+	 font-size: 0.7rem;
+	 line-height: 1.9em;
+}
+
 #top_info > li {
 	display: inline-block;
 	margin: 0 2px 0 2px;
@@ -779,9 +793,13 @@ img.sort, .sort {
 	border: 1px solid rgb(0,0,0,0.7);
 	font-weight: 700;
 }
-.dropmenu li .active .amt, #top_info li .active .amt {
-	background: rgba(0, 0, 0, 0.2);
-	color: inherit;
+#top_info li .active .amt {
+	background: #fff;
+	color: #000;
+}
+.dropmenu li .active .amt {
+	background: #fff;
+	color: #901804;
 }
 .dropmenu li :hover.active .amt, #top_info li :hover.active .amt {
 	color: #901804;
@@ -862,15 +880,14 @@ a[class^="mobile_generic_menu_"] {
 	background: linear-gradient(0deg, rgba(135,0,20,1) 0%, rgba(96,0,20,1) 100%);
 	min-height: 26px;
 	line-height: 26px;
-	margin: 0 0.7em;
 	border-radius: 5px;
+	margin: 0px 0.7em;
 }
-
 .main_menu_container {
 	padding: 0px;
 	border: none;
+	margin: 0 auto;
 }
-
 /* User information. */
 #profile_menu_top::after {
 	content: " \25BC";
@@ -1116,7 +1133,6 @@ a[class^="mobile_generic_menu_"] {
 	display: inline-block;
 	padding: 0 8px;
 	color: rgb(0,0,0);
-	font-weight: bold;
 	font-size: 0.8em;
 	line-height: 2em;
 	text-transform: uppercase;
@@ -1125,19 +1141,18 @@ a[class^="mobile_generic_menu_"] {
 	background: #eaeaea;
 	border: none;
 	border-radius: 13px;
-/*	box-shadow: 1px 1px 1px rgba(221, 221, 221, 0.57); */
 	box-sizing: border-box;
 	vertical-align: middle;
 	height: 23px;
 }
 .operationsmodification.righttext a.button {
-	border: 1px solid #000;
+  border: 1px solid #000;
 }
 .quickModifyMargin .button {
-/*	border: 1px solid #000; */
+  border: 1px solid #000;
 }
 .quickbuttons > li > a {
-	border: none;
+	border: 1px solid black;
 }
 html[lang="el-GR"] .button,
 html[lang="el-GR"] .quickbuttons > li > a,
@@ -1148,10 +1163,11 @@ html[lang="el-GR"] .inline_mod_check {
     font-weight: bold;
     padding: 2px 7px;
 }
+.button:hover, .button:focus,
 .quickbuttons > li:hover > a, .quickbuttons > li > a:focus {
 	color: #000;
-/*	border-color: #9e9e9e; */
-	font-weight: bold;
+	border-color: #9e9e9e;
+	text-decoration: none;
 }
 .button:hover, .button:focus {
 	color: #000;
@@ -1164,6 +1180,7 @@ html[lang="el-GR"] .inline_mod_check {
 }
 .button.active:hover, .button.active:focus {
 	background: #620d08;
+	color: #DDDDFF;
 }
 .cat_bar .button {
 	box-shadow: none;
@@ -1177,10 +1194,10 @@ html[lang="el-GR"] .inline_mod_check {
 	border-radius: 0;
 }
 .buttonrow .button:first-child {
-	border-radius: 13px 0 0 13px;
+	border-radius: 3px 0 0 3px;
 }
 .buttonrow .button:last-child {
-	border-radius:  0 13px 13px 0;
+	border-radius:  0 3px 3px 0;
 }
 /* in a titlebg, the buttonlist is of small height */
 .titlebg .buttonlist {
@@ -1209,9 +1226,9 @@ html[lang="el-GR"] .inline_mod_check {
 
 /* Set maximum width limit for content */
 #top_section .inner_wrap, #wrapper, #header, .main_menu_container {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 90%;
 }
 
 /* The framing graphics */
@@ -1229,8 +1246,7 @@ html[lang="el-GR"] .inline_mod_check {
 }
 #top_info {
 	clear: both;
-	padding-bottom: 5px;
-	margin-top: 5px;
+	 padding-bottom: 5px;
 }
 #pm_menu, #alerts_menu, #profile_menu {
 	right: 0;
@@ -1264,7 +1280,7 @@ html[lang="el-GR"] .inline_mod_check {
 /* The logo and slogan. */
 #header {
 	background: rgb(30,30,32);
-	 background: linear-gradient(0deg, rgba(30,30,32,1) 0%, rgba(52,52,52,1) 100%);
+	background: linear-gradient(0deg, rgba(30,30,32,1) 0%, rgba(52,52,52,1) 100%);
 	padding: 2px 12px 0px 12px;
 	min-height: 147px;
 	border: 2px solid #000;
@@ -1305,7 +1321,7 @@ img#smflogo {
 	color: #ccc;
 }
 .welcome strong {
-  color: #ccc;
+	color: #ccc;
 }
 /*
 /* The user info, news, etc.*/
@@ -1365,14 +1381,14 @@ ul li.greeting {
 }
 /* News section. */
 #header > .news {
-  clear: both;
-  margin: 26px 10px 0px 6px;
-  display: block;
-  float: left;
-  color: #B7B7B7;
-  text-align: left;
-  font-size: 8pt;
-  font-family: Helvetica, Arial, sans-serif;
+	clear: both;
+  	margin: 26px 10px 0px 6px;
+  	display: block;
+  	float: left;
+  	color: #B7B7B7;
+  	text-align: left;
+  	font-size: 8pt;
+  	font-family: Helvetica, Arial, sans-serif;
 }
 #header > .news h2 {
 	line-height: initial;
@@ -1421,7 +1437,7 @@ ul li.greeting {
 }
 .navigate_section ul li .dividers {
 	color: #800000;
-	font: 83.33%/150% ;
+	font: 83.33%/150%;
 	padding: 0 2px 0 6px;
 }
 .navigate_section ul li .board_moderators a {
@@ -1497,31 +1513,24 @@ ul li.greeting {
 }
 .quickbuttons > li > a, .inline_mod_check {
 	display: block;
-	height: 23px;
+	height: auto;
 	padding: 0 4px;
 	color: #222;
 	line-height: 1.375rem;
 	border-radius: 0;
 }
-.quickbuttons li:hover, .quickbuttons li a:hover {
-	font-weight: underline;
-	background: #bababa;
-	color: #222;
-}
 .quickbuttons > li:first-child > a {
-	border-radius: 13px 0 0 13px;
+	border-radius: 4px 0 0 4px;
 }
 .inline_mod_check:last-child {
-	padding-right: 5px;
-	border-radius: 0 13px 13px 0;
-/*	border: 1px solid; */
+	padding: 0px;
+	border: 1px solid;
 }
 .quickbuttons > li:last-child > a, .inline_mod_check:last-child {
-	padding-right: 5px;
-	border-radius: 0 13px 13px 0;
+	border-radius: 0 4px 4px 0;
 }
 .quickbuttons > li:only-child > a, .inline_mod_check:only-child {
-	border-radius: 0;
+	border-radius: 4px;
 	margin: 2px;
 	height: 23px;
 }
@@ -1956,6 +1965,7 @@ tr.windowbg td, tr.bg td, .table_grid tr td {
 /* 2nd row */
 .main_icons.move::before, .main_icons.next_page::before {
 	background-position: -5px -31px;
+	/*filter: hue-rotate(160deg);*/
 }
 .main_icons.general::before, .main_icons.boards::before, .main_icons.topics_views::before {
 	background-position: -31px -31px;
@@ -1990,7 +2000,7 @@ tr.windowbg td, tr.bg td, .table_grid tr td {
 }
 .main_icons.previous_page::before {
 	background-position: -31px -57px;
-	filter: hue-rotate(160deg);
+	/*filter: hue-rotate(160deg);*/
 }
 .main_icons.inbox::before {
 	background-position: -57px -57px;
@@ -3846,8 +3856,8 @@ ul.post_options li {
 /* General Classes */
 /* Cat_bar / catbg */
 div.cat_bar {
-	 background: rgb(142,24,4);
-	 background: linear-gradient(0deg, rgba(142,24,4,1) 0%, rgba(93,11,9,1) 100%);
+	background: rgb(142,24,4);
+	background: linear-gradient(0deg, rgba(142,24,4,1) 0%, rgba(93,11,9,1) 100%);
 	padding: 0;
 	border-radius: 5px;
 }
@@ -3904,20 +3914,20 @@ h3.catbg .main_icons::before, h3.catbg .icon {
 }
 /* TitleBar & SubBar */
 .title_bar {
-	 background: rgb(81,81,81);
-	 background: linear-gradient(0deg, rgba(81,81,81,1) 0%, rgba(29,29,29,1) 100%);
+	background: rgb(81,81,81);
+	background: linear-gradient(0deg, rgba(81,81,81,1) 0%, rgba(29,29,29,1) 100%);
 	color: #fff;
 	border-radius: 2px 2px 0 0;
 	margin: 0px;
 	border-radius: 5px;
 }
 .title_bar a{
-	 color: #fff;
+	color: #fff;
 	text-decoration: none;
 }
 .sub_bar {
 	background: rgb(94,12,9);
-	 background: linear-gradient(0deg, rgba(94,12,9,1) 0%, rgba(144,24,4,1) 100%);
+	background: linear-gradient(0deg, rgba(94,12,9,1) 0%, rgba(144,24,4,1) 100%);
 	text-shadow: none;
 	clear: both;
 	border-radius: 5px;
@@ -3986,7 +3996,7 @@ p.information img {
 #topic_icons .information,
 #messageindex .information {
 	border: 1px solid rgb(187, 187, 187);
-	 background: rgb(245, 245, 240);
+	background: rgb(245, 245, 240);
 }
 .topic_pages {
 	font-size: 0.75em;
@@ -4229,7 +4239,7 @@ h3.profile_hd::before,
 	margin-top: 12px;
 }
 #attachment_previews {
-	 display: none;
+	display: none;
 }
 #attachment_previews div.descbox > div,
 #attachment_previews div.errorbox > div,
