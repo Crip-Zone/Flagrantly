@@ -5,13 +5,13 @@
 <!-- The theme's version, please try to use semantic versioning. -->
 <version>1.0</version>
 <!-- Install for, the SMF versions this theme was designed for. Uses the same wildcards used in the packager manager. This field is mandatory. -->
-<install for="2.1 - 2.1.99" />
+<install for="2.1.3 - 2.1.99" />
 <!-- Theme name, used purely for aesthetics. -->
 <name>Flagrantly v213</name>
 <!-- Author: your email address or contact information. The name attribute is optional. -->
-<author name="Crip">info@simplemachines.org</author>
+<author name="Crip">noreply@jpr62.com</author>
 <!-- Website... where to get updates and more information. -->
-<website>https://www.simplemachines.org/</website>
+<website>https://www.jpr62.com/theme/index.php</website>
 <!-- Template layers to use, defaults to "html,body". -->
 <layers>html,body</layers>
 <!-- Templates to load on startup. Default is "index". -->
